@@ -1,0 +1,10 @@
+{
+    "name": "bocasay/custom-dev",
+    "description": "Custom codes by Bocasay's developers",
+    "type": "plugin",
+    "require": {
+        "pgrimaud/instagram-user-feed": "^6.2",
+        "j7mbo/twitter-api-php": "^1.0",
+        "zoonman/linkedin-api-php-client": "^0.0.14"
+    }
+}
