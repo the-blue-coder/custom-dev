@@ -30,7 +30,6 @@ class CustomPostTypes
         //         'public'        => true,
         //         'has_archive'   => false,
         //         'show_in_rest'  => true,
-        //         'show_in_menu'  => false,
         //         'supports'      => array(
         //             'custom-fields'
         //         ),
