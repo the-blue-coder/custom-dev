@@ -1,1 +1,0 @@
-<img src="<?php echo $imageSrc; ?>" alt="<?php echo $title; ?>" class="nearest-event-image" />
