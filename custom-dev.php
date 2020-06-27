@@ -8,58 +8,18 @@
  */
 
 /**
- * Constants
+ * Load constants
  */
 require_once('constants/global.php');
 
 
 /**
- * Helpers
- */
-require_once('app/helpers/custom-functions.php');
-
-
-/**
- * Composer dependencies
+ * Load composer dependencies
  */
 require_once('vendor/autoload.php');
 
 
 /**
- * Third party libraries (those not manageable via composer)
+ * Init our framework
  */
-require_once('third-parties/DateTimeFrench.php');
-
-
-/**
- * Classes
- */
-
-
-/**
- * Hooks
- */
-require_once('app/hooks/WPUpdatesHandler.php');
-require_once('app/hooks/Assets.php');
-require_once('app/hooks/CustomPostTypes.php');
-
-
-/**
- * Shortcodes
- */
-
-
-/**
- * Models
- */
-
-
-/**
- * WP Crons
- */
-require_once('app/wp-crons/CronIntervals.php');
-
-
-/**
- * WP Rest API
- */
+require_once('init.php');
