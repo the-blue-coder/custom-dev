@@ -6,7 +6,7 @@ class CustomPostTypes
 {
     public function __construct()
     {
-        //Social posts
+        //Example
         add_action('init', [$this, 'example']);
     }
 
