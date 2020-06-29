@@ -11,14 +11,15 @@ class Init
     public function __construct()
     {
         $this->components = [
+            '/constants/',
+            '/third-parties/',
             '/app/helpers/',
             '/app/classes/',
             '/app/hooks/',
             '/app/shortcodes/',
             '/app/models/',
             '/app/wp-crons/',
-            '/app/wp-rest-api/',
-            '/third-parties/'
+            '/app/wp-rest-api/'
         ];
 
         $this->loadComponents();
@@ -29,10 +30,10 @@ class Init
     private function loadComponents()
     {
         foreach ($this->components as $component) {
-            $componentItems = $this->getFolderContent(CUSTOM_DEV_PLUGIN_DIR . $component);
+            $componentItems = $this->getFolderContent(dirname(__FILE__) . $component);
 
             foreach ($componentItems as $componentItem) {
-                require_once(CUSTOM_DEV_PLUGIN_DIR . $component . $componentItem);
+                require_once(dirname(__FILE__) . $component . $componentItem);
             }
         }
     }

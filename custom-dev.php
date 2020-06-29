@@ -8,12 +8,6 @@
  */
 
 /**
- * Load constants
- */
-require_once('constants/global.php');
-
-
-/**
  * Load composer dependencies
  */
 require_once('vendor/autoload.php');
