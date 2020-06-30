@@ -17,6 +17,7 @@ class Init
             '/app/classes/',
             '/app/hooks/',
             '/app/shortcodes/',
+            '/app/metaboxes/',
             '/app/models/',
             '/app/wp-crons/',
             '/app/wp-rest-api/'
