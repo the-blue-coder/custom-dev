@@ -28,8 +28,9 @@ class WPUpdatesHandler
 
     public function deactivateSomePluginsUpdate($value)
     {
-        unset($value->response['advanced-custom-fields-pro/acf.php']);
-        unset($value->response['wp-linkedin-connect/wp-linkedin-connect.php']);
+        if (is_object($value)) {
+            unset($value->response['advanced-custom-fields-pro/acf.php']);
+        }
 
         return $value;
     }
@@ -40,7 +41,7 @@ class WPUpdatesHandler
     {
         global $menu, $submenu;
 
-        $menu[65][0] = 'Plugins';	
+        $menu[65][0] = __('Plugins');	
         $submenu['index.php'][10][0] = 'Updates';
     }
 }
