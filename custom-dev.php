@@ -22,6 +22,7 @@ require_once('init.php');
 /**
  * Handle plugin update
  */
-require_once('updater.php');
-
-new CustomDev\Updater(__FILE__);
+if (GITHUB_VERSIONED) {
+    require_once('updater.php');
+    new CustomDev\Updater(__FILE__);
+}
