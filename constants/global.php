@@ -3,6 +3,7 @@
 /**
  * GITHUB REPOSITORY INFOS
  */
+define('GITHUB_VERSIONED',    true);
 define('GITHUB_USERNAME',     'madainsight');
 define('GITHUB_REPOSITORY',   'custom-dev');
 define('GITHUB_ACCESS_TOKEN', '5241b64a5655af2bc306374a8a36bc73db9f203c');
