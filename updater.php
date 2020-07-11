@@ -23,9 +23,7 @@ class Updater
         $this->repository     = GITHUB_REPOSITORY;
         $this->authorizeToken = GITHUB_ACCESS_TOKEN;
 
-        //Set plugin properties
-        add_action('admin_init', [$this, 'setPluginProperties']);
-
+        $this->setPluginProperties();
         $this->initialize();
 
         return $this;
@@ -35,9 +33,11 @@ class Updater
 
     public function setPluginProperties()
     {
-        $this->plugin   = get_plugin_data($this->file);
-        $this->basename = plugin_basename($this->file);
-        $this->active   = is_plugin_active($this->basename);
+        add_action('admin_init', function () {
+            $this->plugin   = get_plugin_data($this->file);
+            $this->basename = plugin_basename($this->file);
+            $this->active   = is_plugin_active($this->basename);
+        });
     }
 
 
