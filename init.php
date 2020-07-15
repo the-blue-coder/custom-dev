@@ -16,6 +16,7 @@ class Init
             '/app/helpers/',
             '/app/classes/',
             '/app/hooks/',
+            '/app/middleware/',
             '/app/shortcodes/',
             '/app/metaboxes/',
             '/app/models/',
