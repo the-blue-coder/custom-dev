@@ -10,19 +10,19 @@
 /**
  * Load composer dependencies
  */
-require_once('vendor/autoload.php');
+require_once 'vendor/autoload.php';
 
 
 /**
  * Init our framework
  */
-require_once('init.php');
+require_once 'init.php';
 
 
 /**
  * Handle plugin update
  */
 if (GITHUB_VERSIONED) {
-    require_once('updater.php');
+    require_once 'updater.php';
     new CustomDev\Updater(__FILE__);
 }
