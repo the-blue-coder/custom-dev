@@ -60,7 +60,9 @@ function loadView($path, $data = [], $getHtml = false)
 {
     $path = str_replace('.', '/', $path);
 
-    extract($data);
+    if (is_array($data)) {
+        extract($data);
+    }
 
     ob_start();
         include(CUSTOM_DEV_PLUGIN_DIR . '/resources/views/' . $path . '.php');
