@@ -7,7 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit35eecaaf4a9c7e9b44e63dedc826a5ee
 {
     public static $files = array (
+        'a282c8be9e528645d5772391932641bf' => __DIR__ . '/../..' . '/updater.php',
         'cafd412a62b2de521724eede9cc17c2d' => __DIR__ . '/../..' . '/src/Helpers/custom-functions.php',
+        '143a9446190192a4adbd2ce4ba54ca1a' => __DIR__ . '/../..' . '/config/autoload.php',
         '59884814541d71ba66b45c705f174a0e' => __DIR__ . '/../..' . '/config/github.php',
         '1aa7d3303aca3abfd7e274c6df1b6130' => __DIR__ . '/../..' . '/config/paths.php',
         '10ed3b4868f9e323f0323292276b8818' => __DIR__ . '/../..' . '/config/text-domain.php',
@@ -28,10 +30,9 @@ class ComposerStaticInit35eecaaf4a9c7e9b44e63dedc826a5ee
     );
 
     public static $classMap = array (
-        'CustomDev\\App\\Hooks\\Assets' => __DIR__ . '/../..' . '/src/Hooks/Assets.php',
-        'CustomDev\\App\\Hooks\\CustomPostTypes' => __DIR__ . '/../..' . '/src/Hooks/CustomPostTypes.php',
-        'CustomDev\\App\\Hooks\\WPUpdatesHandler' => __DIR__ . '/../..' . '/src/Hooks/WPUpdatesHandler.php',
-        'CustomDev\\App\\WPCrons\\CronIntervals' => __DIR__ . '/../..' . '/src/WPCrons/CronIntervals.php',
+        'CustomDev\\Hooks\\Assets' => __DIR__ . '/../..' . '/src/Hooks/Assets.php',
+        'CustomDev\\Hooks\\CustomPostTypes' => __DIR__ . '/../..' . '/src/Hooks/CustomPostTypes.php',
+        'CustomDev\\Hooks\\WPUpdates' => __DIR__ . '/../..' . '/src/Hooks/WPUpdates.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

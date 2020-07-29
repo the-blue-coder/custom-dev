@@ -8,13 +8,14 @@
             "email": "jd.rakotoarison@gmail.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
             "CustomDev\\": "src"
         },
         "files": [
+            "updater.php",
             "src/Helpers/custom-functions.php",
+            "config/autoload.php",
             "config/github.php",
             "config/paths.php",
             "config/text-domain.php"

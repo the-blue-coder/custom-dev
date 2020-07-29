@@ -2,8 +2,7 @@ export default {
     /**
      * Get scroll top
      */
-    getScrollTop()
-    {
+    getScrollTop: function () {
         return $(window).scrollTop();
     },
 
@@ -12,8 +11,7 @@ export default {
     /**
      * Hide element on outside click
      */
-    hideElementOnOutsideClick(elementToToggle, toggler, toggleClass, fadeSpeed) 
-    {
+    hideElementOnOutsideClick: function (elementToToggle, toggler, toggleClass, fadeSpeed) {
         $(document).on("click", function (e) {
             let target = $(e.target);
             let href   = e.target.href;
@@ -36,8 +34,7 @@ export default {
     /**
      * Print form error messages
      */
-    printFormErrorMessage(field, error_text) 
-    {
+    printFormErrorMessage: function (field, error_text) {
         field.closest(".form-group").append("<span class='error'>" + error_text + "</span>");
     },
 
@@ -46,8 +43,7 @@ export default {
     /**
      * Do Ajax
      */
-    doAjax(url, type, dataType, data, done = null, fail = null, always = null) 
-    {
+    doAjax: function (url, type, dataType, data, done = null, fail = null, always = null) {
         $.ajax({
             url: url,
             type: type,
@@ -61,8 +57,7 @@ export default {
     /**
      * Show/hide password
      */
-    showHidePassword($_element) 
-    {
+    showHidePassword: function ($_element) {
         let input = $_element.parent().find('input');
 
         $_element.toggleClass('fa-eye fa-eye-slash');
@@ -74,8 +69,7 @@ export default {
     /**
      * Limit input characters
      */
-    limitInputCharacters() 
-    {
+    limitInputCharacters: function () {
         let fieldSelector = $('.jr-limit-characters');
 
         fieldSelector.on('keyup keydown', function () {
@@ -96,8 +90,7 @@ export default {
     /**
      * Multiple serializeArray for forms (containing multiple checkboxes for example)
      */
-    multipleSerializeArray(form) 
-    {
+    multipleSerializeArray: function (form) {
         let form_data = {};
 
         $.each(form.serializeArray(), function (index, fieldData) {
@@ -120,8 +113,7 @@ export default {
     /**
      * Scroll to an element
      */
-    scrollToElement(element, offsetCorrection) 
-    {
+    scrollToElement: function (element, offsetCorrection) {
         let htmlAndBody = $('html, body');
 
         htmlAndBody.animate({
@@ -134,8 +126,7 @@ export default {
     /**
      * Get a single query param from URL
      */
-    getURLQueryParam(name) 
-    {
+    getURLQueryParam: function (name) {
         let querySearch = document.location.search.split('+').join(' ');
 
         let params = {};
@@ -154,8 +145,7 @@ export default {
     /**
      * Add single query param to URL
      */
-    addURLQueryParam(key, value) 
-    {
+    addURLQueryParam: function (key, value) {
         let currentURL = window.location.href;
         let re         = new RegExp('([?&])' + key + '=.*?(&|$)', 'i');
         let separator  = currentURL.indexOf('?') !== -1 ? '&' : '?';
@@ -175,8 +165,7 @@ export default {
     /**
      * Remove single query param from URL
      */
-    removeURLQueryParam(key, sourceURL) 
-    {
+    removeURLQueryParam: function (key, sourceURL) {
         var rtn = sourceURL.split("?")[0],
             param,
             params_arr = [],
@@ -201,8 +190,7 @@ export default {
     /**
      * Refine URL
      */
-    refineURL() 
-    {
+    refineURL: function () {
         window.history.replaceState(null, null, window.location.pathname);   
     },
 
@@ -211,8 +199,7 @@ export default {
     /**
      * Convert RGB colors to HEX format
      */
-    rgbToHex(rgb) 
-    {
+    rgbToHex: function (rgb) {
         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
         return '#' +
             ('0' + parseInt(rgb[1],10).toString(16)).slice(-2) +
@@ -225,8 +212,7 @@ export default {
     /**
      * Get random array value except an element
      */
-    getRandomArrayValueExcept(array, toExclude) 
-    {
+    getRandomArrayValueExcept: function (array, toExclude) {
         for (let i = 0; i < array.length; i++) { 
             if (array[i] === toExclude) { 
                 array.splice(i, 1); 
@@ -241,8 +227,7 @@ export default {
     /**
      * Detect if an object is empty
      */
-    isObjectEmpty(object) 
-    {
+    isObjectEmpty: function (object) {
         for (let key in object) {
             if (object.hasOwnProperty(key)) {
                 return false;
@@ -257,8 +242,7 @@ export default {
     /**
      * Parse float all object values
      */
-    parseFloatObjectValues(object) 
-    {
+    parseFloatObjectValues: function (object) {
         let newObject = {};
 
         for (let key in object) {
@@ -273,8 +257,7 @@ export default {
     /**
      * JS nl2br
      */
-    nl2br(str, is_xhtml) 
-    {
+    nl2br: function (str, is_xhtml) {
         if (typeof str === 'undefined' || str === null) {
             return '';
         }
@@ -287,8 +270,7 @@ export default {
     /**
      * Validate telephone number
      */
-    isPhoneNumber(phoneNumber) 
-    {
+    isPhoneNumber: function (phoneNumber) {
         return /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/.test(phoneNumber);
     },
 
@@ -297,8 +279,7 @@ export default {
     /**
      * Display form messages
      */
-    displayFormMessages(htmlElementWrapper, messages) 
-    {
+    displayFormMessages: function (htmlElementWrapper, messages) {
         let errors = '';
 
         if (typeof(messages) === 'object')

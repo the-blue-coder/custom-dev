@@ -1,8 +1,8 @@
 <?php
 
-namespace CustomDev\App\Hooks;
+namespace CustomDev\Hooks;
 
-class WPUpdatesHandler
+class WPUpdates
 {
     public function __construct()
     {
@@ -46,5 +46,3 @@ class WPUpdatesHandler
         });
     }
 }
-
-new WPUpdatesHandler();

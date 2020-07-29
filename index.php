@@ -7,8 +7,10 @@
  * Version: 2.0.0
  */
 
-require_once 'vendor/autoload.php';
+require 'vendor/autoload.php';
+
+require 'init.php';
 
 if (GITHUB_VERSIONED) {
-    new CustomDev\Updater(__FILE__);
+    new GithubVersioning\Updater(__FILE__);
 }

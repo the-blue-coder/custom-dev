@@ -1,6 +1,6 @@
 <?php
 
-namespace CustomDev\App\Hooks;
+namespace CustomDev\Hooks;
 
 class CustomPostTypes
 {
@@ -41,5 +41,3 @@ class CustomPostTypes
         // });
     }
 }
-
-new CustomPostTypes();

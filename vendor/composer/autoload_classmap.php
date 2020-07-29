@@ -6,8 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CustomDev\\App\\Hooks\\Assets' => $baseDir . '/src/Hooks/Assets.php',
-    'CustomDev\\App\\Hooks\\CustomPostTypes' => $baseDir . '/src/Hooks/CustomPostTypes.php',
-    'CustomDev\\App\\Hooks\\WPUpdatesHandler' => $baseDir . '/src/Hooks/WPUpdatesHandler.php',
-    'CustomDev\\App\\WPCrons\\CronIntervals' => $baseDir . '/src/WPCrons/CronIntervals.php',
+    'CustomDev\\Hooks\\Assets' => $baseDir . '/src/Hooks/Assets.php',
+    'CustomDev\\Hooks\\CustomPostTypes' => $baseDir . '/src/Hooks/CustomPostTypes.php',
+    'CustomDev\\Hooks\\WPUpdates' => $baseDir . '/src/Hooks/WPUpdates.php',
 );
