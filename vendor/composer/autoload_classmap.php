@@ -6,7 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-    'TwitterAPIExchange' => $vendorDir . '/j7mbo/twitter-api-php/TwitterAPIExchange.php',
-    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+    'CustomDev\\App\\Hooks\\Assets' => $baseDir . '/src/Hooks/Assets.php',
+    'CustomDev\\App\\Hooks\\CustomPostTypes' => $baseDir . '/src/Hooks/CustomPostTypes.php',
+    'CustomDev\\App\\Hooks\\WPUpdatesHandler' => $baseDir . '/src/Hooks/WPUpdatesHandler.php',
+    'CustomDev\\App\\WPCrons\\CronIntervals' => $baseDir . '/src/WPCrons/CronIntervals.php',
 );

@@ -11,6 +11,7 @@ let mix = require('webpack-mix');
  |
  */
 
-mix.sass('resources/scss/main.scss', 'dist/css/custom-styles.min.css');
+mix.sass('resources/scss/main.scss', 'dist/css/custom-styles.min.css')
+   .options({processCssUrls: false});
 
 mix.js('resources/js/main.js', 'dist/js/custom-scripts.min.js');

@@ -1,10 +1,23 @@
 {
-    "name": "bocasay/custom-dev",
-    "description": "Custom codes by Bocasay's developers",
-    "type": "plugin",
-    "require": {
-        "pgrimaud/instagram-user-feed": "^6.2",
-        "j7mbo/twitter-api-php": "^1.0",
-        "zoonman/linkedin-api-php-client": "^0.0.14"
+    "name": "wpcustom/custom-dev",
+    "description": "Plugin Framework for WordPress Development",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Jean R.",
+            "email": "jd.rakotoarison@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CustomDev\\": "src"
+        },
+        "files": [
+            "src/Helpers/custom-functions.php",
+            "config/github.php",
+            "config/paths.php",
+            "config/text-domain.php"
+        ]
     }
 }
