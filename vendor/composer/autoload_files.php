@@ -8,8 +8,4 @@ $baseDir = dirname($vendorDir);
 return array(
     'a282c8be9e528645d5772391932641bf' => $baseDir . '/updater.php',
     'cafd412a62b2de521724eede9cc17c2d' => $baseDir . '/src/Helpers/custom-functions.php',
-    '143a9446190192a4adbd2ce4ba54ca1a' => $baseDir . '/config/autoload.php',
-    '59884814541d71ba66b45c705f174a0e' => $baseDir . '/config/github.php',
-    '1aa7d3303aca3abfd7e274c6df1b6130' => $baseDir . '/config/paths.php',
-    '10ed3b4868f9e323f0323292276b8818' => $baseDir . '/config/text-domain.php',
 );

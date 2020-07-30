@@ -14,11 +14,7 @@
         },
         "files": [
             "updater.php",
-            "src/Helpers/custom-functions.php",
-            "config/autoload.php",
-            "config/github.php",
-            "config/paths.php",
-            "config/text-domain.php"
+            "src/Helpers/custom-functions.php"
         ]
     }
 }

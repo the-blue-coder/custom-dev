@@ -2,19 +2,22 @@
 
 class Init
 {
-    private $goDirectElements;
-
-
-
     public function __construct()
     {
-        $this->go();
+        $this->autoloadElements();
     }
 
 
 
-    private function go()
+    private function autoloadElements()
     {
+        $configsFolder = dirname(__FILE__) . '/config';
+        $configs       = $this->getFolderContent($configsFolder);
+
+        foreach ($configs as $config) {
+            require $configsFolder . '/' . $config;
+        }
+
         foreach (AUTOLOADED_SRC_ELEMENTS as $element) {
             $files = $this->getFolderContent(dirname(__FILE__) . '/src/' . $element);
 
