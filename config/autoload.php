@@ -5,6 +5,5 @@ define('AUTOLOADED_SRC_ELEMENTS', [
     'Metaboxes',
     'Middleware',
     'Shortcodes',
-    'Utils',
     'WPRestAPI'
 ]);
