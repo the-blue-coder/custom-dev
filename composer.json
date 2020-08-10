@@ -10,11 +10,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "CustomDev\\": "src"
+            "CustomDev\\": "app"
         },
         "files": [
             "updater.php",
-            "src/Helpers/custom-functions.php"
+            "app/Helpers/custom-functions.php"
         ]
     }
 }

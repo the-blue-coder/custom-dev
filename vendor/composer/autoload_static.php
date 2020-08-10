@@ -8,7 +8,7 @@ class ComposerStaticInit35eecaaf4a9c7e9b44e63dedc826a5ee
 {
     public static $files = array (
         'a282c8be9e528645d5772391932641bf' => __DIR__ . '/../..' . '/updater.php',
-        'cafd412a62b2de521724eede9cc17c2d' => __DIR__ . '/../..' . '/src/Helpers/custom-functions.php',
+        '4592cc985dcb00736ab34aedff6335b9' => __DIR__ . '/../..' . '/app/Helpers/custom-functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -21,14 +21,15 @@ class ComposerStaticInit35eecaaf4a9c7e9b44e63dedc826a5ee
     public static $prefixDirsPsr4 = array (
         'CustomDev\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
     public static $classMap = array (
-        'CustomDev\\Hooks\\Assets' => __DIR__ . '/../..' . '/src/Hooks/Assets.php',
-        'CustomDev\\Hooks\\CustomPostTypes' => __DIR__ . '/../..' . '/src/Hooks/CustomPostTypes.php',
-        'CustomDev\\Hooks\\WPUpdates' => __DIR__ . '/../..' . '/src/Hooks/WPUpdates.php',
+        'CustomDev\\Hooks\\Assets' => __DIR__ . '/../..' . '/app/Hooks/Assets.php',
+        'CustomDev\\Hooks\\CustomPostTypes' => __DIR__ . '/../..' . '/app/Hooks/CustomPostTypes.php',
+        'CustomDev\\Hooks\\WPUpdates' => __DIR__ . '/../..' . '/app/Hooks/WPUpdates.php',
+        'CustomDev\\Utils\\PostTypesUtils' => __DIR__ . '/../..' . '/app/Utils/PostTypesUtils.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

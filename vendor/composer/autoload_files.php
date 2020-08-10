@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'a282c8be9e528645d5772391932641bf' => $baseDir . '/updater.php',
-    'cafd412a62b2de521724eede9cc17c2d' => $baseDir . '/src/Helpers/custom-functions.php',
+    '4592cc985dcb00736ab34aedff6335b9' => $baseDir . '/app/Helpers/custom-functions.php',
 );

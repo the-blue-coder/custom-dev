@@ -1,17 +1,35 @@
-export default {
+export default class Helpers 
+{
+    /**
+     * Do Ajax
+     */
+    doAjax(url, type, dataType, data, done, fail, always) 
+    {
+        $.ajax({
+            url: url,
+            type: type,
+            dataType: dataType,
+            data: data,
+        }).done(done).fail(fail).always(always);
+    }
+
+
+    
     /**
      * Get scroll top
      */
-    getScrollTop: function () {
+    getScrollTop()
+    {
         return $(window).scrollTop();
-    },
+    }
 
 
 
     /**
      * Hide element on outside click
      */
-    hideElementOnOutsideClick: function (elementToToggle, toggler, toggleClass, fadeSpeed) {
+    hideElementOnOutsideClick(elementToToggle, toggler, toggleClass, fadeSpeed) 
+    {
         $(document).on("click", function (e) {
             let target = $(e.target);
             let href   = e.target.href;
@@ -24,56 +42,42 @@ export default {
                 return false;
             }
 
-            elementToToggle.fadeOut(fadeSpeed)
-                           .removeClass(toggleClass);
+            elementToToggle.fadeOut(fadeSpeed).removeClass(toggleClass);
         });
-    },
+    }
 
 
 
     /**
      * Print form error messages
      */
-    printFormErrorMessage: function (field, error_text) {
+    printFormErrorMessage(field, error_text) 
+    {
         field.closest(".form-group").append("<span class='error'>" + error_text + "</span>");
-    },
-
-
-
-    /**
-     * Do Ajax
-     */
-    doAjax: function (url, type, dataType, data, done = null, fail = null, always = null) {
-        $.ajax({
-            url: url,
-            type: type,
-            dataType: dataType,
-            data: data,
-        }).done(done).fail(fail).always(always);
-    },
+    }
 
 
 
     /**
      * Show/hide password
      */
-    showHidePassword: function ($_element) {
+    showHidePassword($_element) 
+    {
         let input = $_element.parent().find('input');
 
         $_element.toggleClass('fa-eye fa-eye-slash');
         input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type','password');
-    },
+    }
 
 
 
     /**
      * Limit input characters
      */
-    limitInputCharacters: function () {
-        let fieldSelector = $('.jr-limit-characters');
-
+    limitInputCharacters(fieldSelector) 
+    {
         fieldSelector.on('keyup keydown', function () {
-            let thisField     = $(this);
+            let thisField         = $(this);
             let limitIndicator    = thisField.siblings('.remaining-characters');
             let maxLength         = thisField.attr('maxlength');
             let limitText         = limitIndicator.data('limit-text');
@@ -83,14 +87,15 @@ export default {
 
             limitIndicator.html(textRemaining + ' ' + (textRemaining > 1 ? limitText : limitTextSingular));
         });
-    },
+    }
 
 
 
     /**
      * Multiple serializeArray for forms (containing multiple checkboxes for example)
      */
-    multipleSerializeArray: function (form) {
+    multipleSerializeArray(form) 
+    {
         let form_data = {};
 
         $.each(form.serializeArray(), function (index, fieldData) {
@@ -106,27 +111,29 @@ export default {
         });
 
         return form_data;
-    },
+    }
 
 
 
     /**
      * Scroll to an element
      */
-    scrollToElement: function (element, offsetCorrection) {
-        let htmlAndBody = $('html, body');
+    scrollToElement(reference, element, offsetCorrection) 
+    {
+        reference = reference === 'default' ? $('html, body') : reference;
 
-        htmlAndBody.animate({
+        reference.animate({
             scrollTop: (element.offset().top) + offsetCorrection
         }, 400);
-    },
+    }
 
 
 
     /**
      * Get a single query param from URL
      */
-    getURLQueryParam: function (name) {
+    getURLQueryParam(name) 
+    {
         let querySearch = document.location.search.split('+').join(' ');
 
         let params = {};
@@ -138,14 +145,15 @@ export default {
         }
 
         return params[name];
-    },
+    }
 
 
 
     /**
      * Add single query param to URL
      */
-    addURLQueryParam: function (key, value) {
+    addURLQueryParam(key, value) 
+    {
         let currentURL = window.location.href;
         let re         = new RegExp('([?&])' + key + '=.*?(&|$)', 'i');
         let separator  = currentURL.indexOf('?') !== -1 ? '&' : '?';
@@ -158,61 +166,69 @@ export default {
         }
 
         window.history.pushState('', '', newURL);
-    },
+    }
 
 
 
     /**
      * Remove single query param from URL
      */
-    removeURLQueryParam: function (key, sourceURL) {
-        var rtn = sourceURL.split("?")[0],
+    removeURLQueryParam(key, sourceURL) 
+    {
+        let rtn = sourceURL.split("?")[0],
             param,
             params_arr = [],
             queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
 
         if (queryString !== "") {
             params_arr = queryString.split("&");
-            for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+
+            for (let i = params_arr.length - 1; i >= 0; i -= 1) {
                 param = params_arr[i].split("=")[0];
                 if (param === key) {
                     params_arr.splice(i, 1);
                 }
             }
-            rtn = rtn + "?" + params_arr.join("&");
+
+            if (params_arr.length > 0) {
+                rtn = rtn + "?" + params_arr.join("&");
+            }
         }
         
         window.history.pushState('', '', rtn);
-    },
+    }
 
 
 
     /**
      * Refine URL
      */
-    refineURL: function () {
+    refineURL() 
+    {
         window.history.replaceState(null, null, window.location.pathname);   
-    },
+    }
 
 
 
     /**
      * Convert RGB colors to HEX format
      */
-    rgbToHex: function (rgb) {
+    rgbToHex(rgb) 
+    {
         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
         return '#' +
             ('0' + parseInt(rgb[1],10).toString(16)).slice(-2) +
             ('0' + parseInt(rgb[2],10).toString(16)).slice(-2) +
             ('0' + parseInt(rgb[3],10).toString(16)).slice(-2);
-    },
+    }
 
 
 
     /**
      * Get random array value except an element
      */
-    getRandomArrayValueExcept: function (array, toExclude) {
+    getRandomArrayValueExcept(array, toExclude)
+    {
         for (let i = 0; i < array.length; i++) { 
             if (array[i] === toExclude) { 
                 array.splice(i, 1); 
@@ -220,14 +236,15 @@ export default {
         }
 
         return array;
-    },
+    }
 
 
 
     /**
      * Detect if an object is empty
      */
-    isObjectEmpty: function (object) {
+    isObjectEmpty(object) 
+    {
         for (let key in object) {
             if (object.hasOwnProperty(key)) {
                 return false;
@@ -235,14 +252,15 @@ export default {
         }
 
         return true;
-    },
+    }
 
 
 
     /**
      * Parse float all object values
      */
-    parseFloatObjectValues: function (object) {
+    parseFloatObjectValues(object) 
+    {
         let newObject = {};
 
         for (let key in object) {
@@ -250,49 +268,45 @@ export default {
         }
 
         return newObject;
-    },
+    }
 
 
 
     /**
      * JS nl2br
      */
-    nl2br: function (str, is_xhtml) {
+    nl2br(str, is_xhtml) 
+    {
         if (typeof str === 'undefined' || str === null) {
             return '';
         }
         var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
-    },
+    }
 
 
 
     /**
      * Validate telephone number
      */
-    isPhoneNumber: function (phoneNumber) {
+    isPhoneNumber(phoneNumber) 
+    {
         return /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/.test(phoneNumber);
-    },
+    }
 
 
 
     /**
-     * Display form messages
+     * Print form errors
      */
-    displayFormMessages: function (htmlElementWrapper, messages) {
-        let errors = '';
-
-        if (typeof(messages) === 'object')
-        {
-            for (let i in messages) {
-                errors += messages[i] + '<br />';
-            }
-        }
-        else if (typeof(messages) === 'string')
-        {
-            errors = messages;
+    formErrors(form, errors)
+    {
+        for (let name in errors) {
+            form.find('.error-' + name).html(errors[name][0]);
         }
 
-        htmlElementWrapper.html(errors);
+        if (typeof(errors) === 'string') {
+            form.find('.error.global').html(errors);
+        }
     }
 }
