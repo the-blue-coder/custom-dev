@@ -1,6 +1,6 @@
 import Helpers from './Helpers';
 
-export default class Global
+export default class Init
 {
     constructor()
     {

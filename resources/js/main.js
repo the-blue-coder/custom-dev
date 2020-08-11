@@ -1,5 +1,5 @@
-import Global from './inc/Global';
+import Init from './inc/Init';
 
 $(document).ready(function () {
-    new Global();
+    new Init();
 });
