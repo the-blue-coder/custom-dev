@@ -96,21 +96,21 @@ export default class Helpers
      */
     multipleSerializeArray(form) 
     {
-        let form_data = {};
+        let formData = {};
 
         $.each(form.serializeArray(), function (index, fieldData) {
             if (fieldData.name.endsWith('[]')) {
                 let name = fieldData.name.substring(0, fieldData.name.length - 2);
-                if (!(name in form_data)) {
-                    form_data[name] = [];
+                if (!(name in formData)) {
+                    formData[name] = [];
                 }
-                form_data[name].push(fieldData.value);
+                formData[name].push(fieldData.value);
             } else {
-                form_data[fieldData.name] = fieldData.value;
+                formData[fieldData.name] = fieldData.value;
             }
         });
 
-        return form_data;
+        return formData;
     }
 
 
