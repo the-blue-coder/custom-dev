@@ -4,7 +4,7 @@
  * Plugin name: Custom Dev
  * Description: Plugin Framework for WordPress Development
  * Author: Jean R.
- * Version: 3.1.0
+ * Version: 3.1.1
  */
 
 require 'vendor/autoload.php';
