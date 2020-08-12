@@ -1,5 +1,6 @@
 <?php
 
+define('CUSTOM_DEV_SRC_FOLDER_NAME',   'app');
 define('CUSTOM_DEV_PLUGIN_URL',        plugins_url('', dirname(__FILE__)));
 define('CUSTOM_DEV_PLUGIN_DIR',        dirname(__FILE__, 2));
 define('CUSTOM_DEV_PLUGIN_DIST_URL',   CUSTOM_DEV_PLUGIN_URL . '/dist/');

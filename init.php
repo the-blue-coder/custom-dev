@@ -19,7 +19,7 @@ class Init
         }
 
         foreach (AUTOLOADED_SRC_ELEMENTS as $element) {
-            $files = $this->getFolderContent(dirname(__FILE__) . '/src/' . $element);
+            $files = $this->getFolderContent(dirname(__FILE__) . '/' . CUSTOM_DEV_SRC_FOLDER_NAME . '/' . $element);
 
             foreach ($files as $file) {
                 $class           = basename($file, '.php');
