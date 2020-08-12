@@ -6,6 +6,7 @@ export default class Init
     {
         this.globalVars();
         this.globalServices();
+        this.backButtonForceReload();
         this.ajaxCSRFToken();
     }
 
@@ -21,6 +22,15 @@ export default class Init
     globalServices()
     {
         window.helpers = new Helpers();
+    }
+
+
+
+    backButtonForceReload()
+    {
+        $(window).on('popstate', function () {
+            window.location.reload();
+        });
     }
 
 
